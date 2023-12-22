@@ -4,6 +4,7 @@ import { FaCloudDownloadAlt } from "react-icons/fa";
 import { FaFlagCheckered } from "react-icons/fa";
 import { LuUser2 } from "react-icons/lu";
 import { LuShoppingCart } from "react-icons/lu";
+import { IoIosArrowDown } from "react-icons/io";
 
 import { IoMenu } from "react-icons/io5";
 
@@ -21,7 +22,7 @@ const NavBarMiddle = () => {
 
             <div id="menu-icon" onClick={() => alert("Clicked menu icon")}>
                 {/* icon here */}
-                <IoMenu size={30} color="white" style={{backgroundColor: '#242424', borderRadius: 30, padding: 6, marginLeft: 24, marginRight: 8}}/>
+                <IoMenu size={24} color="white" style={{backgroundColor: '#242424', borderRadius: 30, padding: 4, marginLeft: 24, marginRight: 8}}/>
             </div>
 
             {/* Search bar */}
@@ -41,19 +42,22 @@ const NavBarMiddle = () => {
                 </div>
             </div>
 
-            <div >
+            <div id="nav-icons">
                 <div id="nav-item">
                     {/* Download app */}
                     <FaCloudDownloadAlt size={30}/>
+                    <IoIosArrowDown />
                 </div>
                 <div id="nav-item">
                     {/* Delivery location */}
                     <FaFlagCheckered size={30}/>
+                    <IoIosArrowDown />
                 </div>
 
                 <div id="nav-item">
                     {/* Account */}
                     <LuUser2 size={30}/>
+                    <IoIosArrowDown />
                 </div>
 
                 <div id="nav-item"> 
