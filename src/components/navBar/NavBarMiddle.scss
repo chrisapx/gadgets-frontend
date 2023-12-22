@@ -1,0 +1,59 @@
+.nav-body {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(12, 17, 16);
+    align-items: center;
+    padding-left: 70px;
+    padding-right: 70px;
+
+    #logo {
+        cursor: pointer;
+        // Add styles for logo if needed
+    }
+
+    #menu-icon {
+        cursor: pointer;
+    }
+
+    div:nth-child(2) {
+        // Styles for "Deliver to Uganda"
+    }
+
+    #search {
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        align-items: center;
+        justify-content: center;
+        margin-left: 24px; // Moves the search bar to the right
+
+        #filter {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            height: 32px;
+            padding: 5px;
+            background-color: #a3a3a3;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            // margin-right: 8px; // Add margin between "Deals" and the dropdown icon
+        }
+
+        #search-input {
+            height: 30px;
+            background-color: #ebebeb;
+            flex: 1;
+            // width: 300px; // Adjust width as needed
+            padding: 6px; // Add padding for better appearance
+            border: 0px solid #ccc; // Add a border for a cleaner look
+            // border-radius: 5px; // Optional: Add border-radius for rounded corners
+        }
+
+        #search-icon {
+            cursor: pointer; // Add pointer cursor to indicate the search icon is clickable
+            height: 30px;
+            padding: 6px;
+            background-color: antiquewhite;
+        }
+    }
+}

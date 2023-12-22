@@ -1,0 +1,26 @@
+
+.bar-frame {
+    top: 0;
+    height: 50px;
+    display: flex;
+    margin: 0;
+    /* flex: 1; */
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: '100%';
+
+}
+
+#contact-word {
+    font-size: larger;
+    font-weight: 600;
+    color: rgb(255, 99, 42);
+}
+
+#contact {
+    font-size: larger;
+    font-weight: 600;
+    color: rgb(5, 5, 5);
+    margin-left: 20px;
+}
