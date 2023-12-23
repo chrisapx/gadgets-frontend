@@ -1,0 +1,45 @@
+
+.brands-frame {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgb(15, 15, 15);
+    padding: 20px;
+    padding: 20px;
+
+    .brand-item {
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+}
+
+.brands {
+    // padding-left: 70px;
+    // padding-right: 70px;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center; /* Adjust as needed */
+    overflow-x: hidden; /* Enable horizontal scrolling */
+    // position: relative;
+    color: dimgray;
+
+    .scroll-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        font-size: 24px;
+        color: white;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    }
+}
+

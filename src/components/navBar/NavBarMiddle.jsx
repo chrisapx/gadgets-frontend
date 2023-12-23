@@ -42,8 +42,8 @@ const NavBarMiddle = () => {
                 </div>
             </div>
 
-            <div id="nav-icons">
-                <div id="nav-item">
+            <div id="nav-items" style={{display: "flex", flexDirection: 'row', gap: '16px', marginLeft: '16px'}}>
+                <div id="nav-item" style={{justifyContent: "center", alignItems: 'center'}}>
                     {/* Download app */}
                     <FaCloudDownloadAlt size={30}/>
                     <IoIosArrowDown />
