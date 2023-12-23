@@ -61,24 +61,26 @@
             border-top-right-radius: 5px;
             border-bottom-right-radius: 5px;
         }
+    
+    }
 
-        #nav-items {
-            // display: flex;
-            // margin-left: 8px;
-            // flex-direction: row; // Set the flex direction to row to make items horizontal
-            // align-items: center; // Align items vertically in the center
-            // margin-left: auto; // Pushes the icons to the right
-    
-            #nav-item {
-                display: flex;
-                flex-direction: row;
-                align-items: center; // Align items horizontally in the center
-                justify-content: center;
-                margin-left: 24px; // Add margin between icons
-                cursor: pointer;
-            }
+    #nav-items {
+        display: flex;
+        margin-left: 36px;
+        gap: 8px;
+        flex-direction: row; // Set the flex direction to row to make items horizontal
+        align-items: center; // Align items vertically in the center
+        // margin-left: auto; // Pushes the icons to the right
+
+        #nav-item {
+            display: flex;
+            gap: 2px;
+            flex-direction: row;
+            border-left-width: 1px;
+            border-left-color: #ebebeb;
+            align-items: center; // Align items horizontally in the center
+            // justify-content: center;
+            cursor: pointer;
         }
-        
-    
     }
 }
