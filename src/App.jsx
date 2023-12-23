@@ -1,5 +1,6 @@
 
 // import './App.css'
+import DetailsPage from './pages/details/Details'
 import Home from './pages/home/Home'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
     <div id='app-frame'>
       <Home/>
+      {/* <DetailsPage/> */}
     </div>
     </>
   )
