@@ -41,6 +41,9 @@ const Footer = () => {
                         <div><GiCash size={24}/></div>
                         <div><FaCcVisa size={24}/></div>
                         <div><FaCcMastercard size={24}/></div>
+                        <div><GiCash size={24}/></div>
+                        <div><FaCcVisa size={24}/></div>
+                        <div><FaCcMastercard size={24}/></div>
                     </div>
 
                 </div>

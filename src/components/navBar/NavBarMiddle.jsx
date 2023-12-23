@@ -12,6 +12,7 @@ import './NavBarMiddle.scss';
 
 const NavBarMiddle = () => {
     const [searchInput, setSearchInput] = useState('');
+    const [cartItemCount, setCartItemCount] = useState(0);
 
     return (
         <div className="nav-body">
@@ -42,8 +43,8 @@ const NavBarMiddle = () => {
                 </div>
             </div>
 
-            <div id="nav-items" style={{display: "flex", flexDirection: 'row', gap: '16px', marginLeft: '16px'}}>
-                <div id="nav-item" style={{justifyContent: "center", alignItems: 'center'}}>
+            <div id="nav-items" >
+                <div id="nav-item">
                     {/* Download app */}
                     <FaCloudDownloadAlt size={30}/>
                     <IoIosArrowDown />
@@ -63,6 +64,7 @@ const NavBarMiddle = () => {
                 <div id="nav-item"> 
                     {/* Cart */}
                     <LuShoppingCart size={30}/>
+                    <p id="cart" style={{backgroundColor: 'white', color: 'black', borderRadius: 30, justifyContent: 'center', paddingInline: 3, position: 'absolute', top: 50, right: 70, fontSize: 10}}>{cartItemCount}</p>
                 </div>
             </div>
         </div>
