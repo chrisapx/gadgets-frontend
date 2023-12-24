@@ -19,11 +19,12 @@
     // padding-right: 70px;
     display: flex;
     flex-direction: row;
-    gap: 16px;
+    gap: 34px;
     justify-content: center; /* Adjust as needed */
-    overflow-x: hidden; /* Enable horizontal scrolling */
+    // overflow-x: hidden; /* Enable horizontal scrolling */
     // position: relative;
-    color: dimgray;
+    font-weight: 400;
+    color: rgb(179, 176, 176);
 
     .scroll-arrow {
         position: absolute;

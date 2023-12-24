@@ -1,8 +1,13 @@
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+
 const DetailsPage = () => {
     return(
         <div>
             <title>details</title>
-            This is the details page
+            <Header/>
+            <p>This is the details page</p>
+            <Footer/>            
         </div>
     )
 }
