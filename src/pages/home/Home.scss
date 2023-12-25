@@ -1,6 +1,8 @@
 
 #home-frame{
     display: flex;
+    flex-direction: column;
+    flex: 1;
     padding-bottom: 20px;
     background-color: rgb(226, 226, 226);
 
@@ -13,4 +15,5 @@
         padding-inline: 10px;
 
     }
+
 }

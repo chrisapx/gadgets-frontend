@@ -3,15 +3,15 @@ import { FaLeaf } from "react-icons/fa";
 
 
 
-const Gaming = () => {
+const Laptops = () => {
 
     const [seeMoreHover, setSeeMoreHoover] = useState(false);
 
     return(
-        <div style={{height: 400, width: 260, backgroundColor: 'white', padding: 16, marginTop: 40, marginLeft: 10, marginRight: 10}} >
-            <title>details</title>
+        <div style={{height: 400, width: 280, backgroundColor: 'white', padding: 16, marginLeft: 10, marginRight: 10, marginTop: 20,  borderRadius: 10}} >
+            <title>Home arrivals</title>
 
-            <div style={{color: 'black', fontWeight: '600', fontSize: 19, alignItems: "center", display: "flex", flexDirection: 'column', justifyContent: 'space-between'}}>Gaming accessories</div> 
+            <div style={{color: 'black', fontWeight: '600', fontSize: 19, alignItems: "center", display: "flex", flexDirection: 'column', justifyContent: 'space-between'}}>Laptops of every need</div> 
             
             <div style={{display: "flex", flexBasis: 'row', justifyContent: 'space-around', marginTop: 24}}>
                 <div style={{display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: 'center', cursor: "pointer"}} onClick={() => alert("Clicked gaming headsets")}>
@@ -35,11 +35,10 @@ const Gaming = () => {
                     <div style={{color: 'black', fontSize: 14}}>Chairs</div>
                 </div>            
             </div>
-            <div 
-                style={{color: seeMoreHover? 'orange' : 'grey', textDecoration: seeMoreHover? 'underline': 'unset', textDecorationColor: 'orange', fontSize: 12, cursor: "pointer", marginTop: 16, }} onMouseOver={() => setSeeMoreHoover(true)} onMouseOut={() => setSeeMoreHoover(false)} onClick={() => alert("Clicked see more gaming accessories")}>See more</div>
+            <div style={{color: seeMoreHover? 'orange' : 'rgb(5, 121, 86)', fontWeight: '500', paddingInline: 16, paddingTop: 16, textDecoration: seeMoreHover? 'underline': 'unset', textDecorationColor: 'orange', fontSize: 12, cursor: "pointer", marginTop: 16, display: "flex", }} onMouseOver={() => setSeeMoreHoover(true)} onMouseOut={() => setSeeMoreHoover(false)} onClick={() => alert("Clicked shop now Pc accessories")}>See more</div>
 
         </div>
     )
 }
 
-export default Gaming;
+export default Laptops;

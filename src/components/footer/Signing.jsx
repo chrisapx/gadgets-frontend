@@ -13,7 +13,7 @@ const Signing = () => {
                 <div id='signing-item'>Privacy note</div>
                 <div id='signing-item'>Terms and conditions</div>
             </div>
-            <div id='signing-item'>© 2023, Cwift.com, inc. or Its affliates</div>
+            <div id='signing-item'>© 2023, cwift.com, inc. or Its affliates</div>
         </div>
     )
 }

@@ -8,7 +8,7 @@ const Phones = () => {
     const [seeMoreHover, setSeeMoreHoover] = useState(false);
 
     return(
-        <div style={{height: 400, width: 260, backgroundColor: 'white', padding: 16, marginTop: 40, marginLeft: 10, marginRight: 10}} >
+        <div style={{height: 400, width: 280, backgroundColor: 'white', padding: 16, marginTop: 40, marginLeft: 10, marginRight: 10, borderRadius: 10}} >
             <title>Phones</title>
 
             <div style={{color: 'black', fontWeight: '600', fontSize: 19, alignItems: "center", display: "flex", flexDirection: 'column', justifyContent: 'space-between'}}>Phones accessories</div> 
@@ -36,7 +36,7 @@ const Phones = () => {
                 </div>            
             </div>
             <div 
-                style={{color: seeMoreHover? 'orange' : 'grey', textDecoration: seeMoreHover? 'underline': 'unset', textDecorationColor: 'orange', fontSize: 12, cursor: "pointer", marginTop: 16, }} onMouseOver={() => setSeeMoreHoover(true)} onMouseOut={() => setSeeMoreHoover(false)} onClick={() => alert("Clicked see more gaming accessories")}>See more deals</div>
+                style={{color: seeMoreHover? 'orange' : 'rgb(5, 121, 86)', fontWeight: '500', paddingInline: 16, paddingTop: 16, textDecoration: seeMoreHover? 'underline': 'unset', textDecorationColor: 'orange', fontSize: 12, cursor: "pointer", marginTop: 16, }} onMouseOver={() => setSeeMoreHoover(true)} onMouseOut={() => setSeeMoreHoover(false)} onClick={() => alert("Clicked see more gaming accessories")}>See more deals</div>
 
         </div>
     )
