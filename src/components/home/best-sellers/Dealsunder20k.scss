@@ -1,0 +1,17 @@
+
+
+// Listings section
+.h-list {
+    display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+  scroll-behavior: smooth; /* Enable smooth scrolling in modern browsers */
+  gap: 16px; 
+
+}
+
+.h-list::-webkit-scrollbar {
+    display: none;
+}

@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 import DetailsPage from './pages/details/Details'
 import Home from './pages/home/Home'
 import About from './pages/about/About'
+import NotFoundPage from './pages/notFound/NotFound'
 
 function App() {
 
@@ -12,12 +13,11 @@ function App() {
     <div id='app-frame'>
       {/* <Home/> */}
       {/* <DetailsPage/> */}
-
       <Routes>
-          <Route path="/" element={<Home />}/>
-          <Route index element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/details" element={<DetailsPage />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/details" element={<DetailsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
 
     </div>

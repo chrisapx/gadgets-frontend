@@ -1,10 +1,12 @@
 import { useRef, useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
-import './Dealsunder20k.scss'
+import { useNavigate } from "react-router-dom";
+import StarRatings from "react-star-ratings";
 
-const DealUnder20k = () => {
+const Recomended = () => {
 
     const containerRef = useRef(null);
+    const navigation = useNavigate();
     const [scrollPosition, setScrollPosition] = useState(0);
 
     const handleItemClick = (item) => {
@@ -28,7 +30,7 @@ const DealUnder20k = () => {
       };
 
     const BsKitchen = [
-        { url : 'src/assets/images/g-mouse.png', name: 'Gamers Mouse'},
+        { url : 'src/assets/images/g-mouse.png', name: 'Gamers Mouse, Real game changer, Comes with a long connection wire used by lazer acient gamers'},
         { url : 'src/assets/images/g-keyboard.png', name: "Gamer's keyboard"},
         { url : 'src/assets/images/g-headsets.png', name: "Gamer's headsets"},
         { url : 'src/assets/images/iphone-12.png', name: "iPhone 12 | 64GB ROM"},
@@ -52,27 +54,34 @@ const DealUnder20k = () => {
         return inputString;
     }
 
+    function formatNumber( num ) {
+        var formattedNumber = num.toLocaleString();
+        return formattedNumber;
+    }
+
     const [seeMoreHover, setSeeMoreHoover] = useState(false);
+    const [priceMoreHover, setPriceMoreHoover] = useState("");
+    const [rating, setRating] = useState(2.8);
 
     return(
-        <div style={{backgroundColor: 'white', height: 300, color: 'black', width: 1280, borderRadius: 10, paddingInline: 16, paddingTop: 8, marginTop: 20}}>
-            <div>
+        <div style={{ backgroundColor: 'white', color: 'black', paddingInline: 16, paddingTop: 8, borderWidth: 2, borderStyle: 'solid', borderColor: '#D3D3D3' }}>
+        <div>
 
                 {/* Heading */}
                 <div style={{display: "flex", alignItems: "center"}}>
-                    <div style={{fontWeight: '600', fontSize: 22}}>Deals under UGX 20,000</div>
+                    <div style={{fontWeight: '500', fontSize: 22}}>Recomended based on your browsing history</div>
                     <div style={{color: seeMoreHover? 'orange' : 'rgb(5, 121, 86)', fontWeight: '500', paddingInline: 16,  textDecoration: seeMoreHover? 'underline': 'unset', textDecorationColor: 'orange', fontSize: 12, cursor: "pointer", }} onMouseOver={() => setSeeMoreHoover(true)} onMouseOut={() => setSeeMoreHoover(false)} onClick={() => alert("Clicked see more sound accessories")}>See more deals</div>
                 </div>
 
                 <div style={{ display: "flex", flexDirection: 'row'}}>
                     {/* Left chevrolet */}
-                    <div style={{backgroundColor: 'white', display: "flex", alignItems: 'center', cursor: 'pointer' }} onClick={scrollLeft}>
+                    {/* <div style={{backgroundColor: 'white', display: "flex", alignItems: 'center', cursor: 'pointer' }} onClick={scrollLeft}>
                         <BsChevronLeft size={30}/>
-                    </div>
+                    </div> */}
                     {/* Listings section */}
-                    <div className="h-list" >
+                    <div className="h-list" style={{marginInline: 50, paddingBlock: 50}}>
                         {BsKitchen.map((img, index) => (
-                            <div style={{}} onClick={() => alert('clicked ' + img.url)}>
+                            <div style={{width: 200, paddingInline: 8, paddingBlock: 16, borderWidth: 0, borderStyle: 'solid', borderColor: 'grey', marginBottom: 12, }} onClick={() => navigation('/about')}>
                                 {/* <img src={img.url} height={'80%'}/> */}
                                 <div style={{height: 170, cursor: "pointer", }}>
                                     {/* <img src={'src/assets/images/iphone-12-2.png'} height={'80%'} style={{objectFit: 'cover'}}/> */}
@@ -80,32 +89,45 @@ const DealUnder20k = () => {
                                 </div>
                                 
                                 <div style={{width: 200}}>
+                                    <div style={{fontWeight: '400', color: priceMoreHover === img.name? 'orange' : 'rgb(5, 121, 86)', cursor: 'pointer'}} onMouseOver={() => setPriceMoreHoover(img.name)} onMouseOut={() => setPriceMoreHoover("")} onClick={() => alert('Clicked ' + img.name)}> 
+                                        {img.name}
+                                        {/* {trimSent(img.name, 20)} */}
+                                        {/* {img.name} */}
+                                    </div>
                                     <div style={{display: 'flex', flexDirection: 'row', gap: 6, alignItems: 'center'}}>
                                         <div style={{color: 'white', fontSize: 12, fontWeight: '500', backgroundColor: '#C83F49', padding: 4, borderRadius: 4}}>26% off</div>
                                         <div style={{color: '#C83F49', fontSizse: 8, fontWeight: '600', }}>Deal</div>
                                     </div>
-                                    <div style={{display: 'flex', flexDirection: 'row', gap: 6, alignItems: "center"}}>
-                                        <div style={{color: 'black', fontSize: 15, fontWeight: '600'}}>UGX 233,700</div>
-                                        {/* <div style={{color: 'grey', fontSize: 10, fontWeight: '500'}}>List price: </div> */}
+                                    <div style={{display: 'flex', flexDirection: 'column', }}>
+                                        <div style={{color: 'black', fontSize: 15, fontWeight: '600'}}>UGX {formatNumber(6752450)}</div>
                                         <div style={{textDecoration: 'line-through', color: 'grey', fontSize: 12, fontWeight: '500'}}>UGX 275,000</div>
                                     </div>
-                                    <div style={{fontWeight: '400'}}> 
-                                        {trimSent(img.name, 20)}
-                                        {/* {img.name} */}
+                                    <div style={{display: "flex", flexDirection: 'row', alignItems: 'center'}}>
+                                        <StarRatings
+                                                rating={rating} // Initial rating
+                                                starRatedColor="orange" // Color of selected stars
+                                                // changeRating={(newRating) => setRating(newRating)} // Update the rating directly
+                                                numberOfStars={6} // Total number of stars
+                                                name='rating' // Name of the rating input (required for accessibility)
+                                                starDimension="15px" // Size of the stars
+                                                starSpacing="1px" // Spacing between stars
+                                            />
+                                        <p style={{color: 'grey', fontSize: 12, paddingLeft: 8}}>(214)</p>
                                     </div>
+                                    
                                 </div>
                                     
                             </div>
-                        ))} 
+                         ))} 
                     </div >
                     {/* Right chevrolet */}
-                    <div style={{backgroundColor: 'white', display: "flex", alignItems: 'center', cursor: "pointer"}} onClick={scrollRight}> 
+                    {/* <div style={{backgroundColor: 'white', display: "flex", alignItems: 'center', cursor: "pointer"}} onClick={scrollRight}> 
                         <BsChevronRight size={30}/>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
     )
 }
 
-export default DealUnder20k;
+export default Recomended;

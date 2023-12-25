@@ -11,6 +11,10 @@ import Fitness from "../../components/home/new-arrivals/Fitness";
 import HomeArrivals from "../../components/home/new-arrivals/HomeArrivals";
 import Laptops from "../../components/home/new-arrivals/Laptops";
 import NewDay from "../../components/home/new-arrivals/WholeNewDayToWork";
+import Recomended from "../../components/home/recommended/Recomended";
+import NavBarLower from "../../components/navBar/NavBarLower";
+import NavBarMiddle from "../../components/navBar/NavBarMiddle";
+import NavBarTop from "../../components/navBar/NavBarTop";
 import './Home.scss'
 
 const Home = () => {
@@ -18,9 +22,13 @@ const Home = () => {
         <div>
             {/* SEO section */}
             <title>Home</title>
-
-            {/* Header */}
-            <Header showAds={false}/>
+                <NavBarTop/>
+            <div style={{position: "sticky", top: 0}}>
+                {/* Header */}
+                <NavBarMiddle/>
+                <NavBarLower/>
+                {/* <Header showAds={false}/> */}
+            </div>
 
             {/* Body section */}
             <div id="home-frame" >
@@ -49,6 +57,9 @@ const Home = () => {
                     {/* Deals under 20k */}
                     <DealUnder20k/>
                 </div>
+            </div>
+            <div >
+                <Recomended/>
             </div>
             <Footer/>
             <Signing/>
