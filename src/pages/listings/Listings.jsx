@@ -6,49 +6,32 @@ import NavBarMiddle from "../../components/navBar/NavBarMiddle"
 import NavBarTop from "../../components/navBar/NavBarTop"
 import './Listings.scss';
 import StarRatings from "react-star-ratings"
+import DummyItems from "../../utils/DummyItems"
+import Recomended from "../../components/home/recommended/Recomended"
+import { Link, useNavigate } from "react-router-dom"
 
 
 const Listings = ( { type } ) => {
 
+    const navigation = useNavigate();
+    
     const [priceMoreHover, setPriceMoreHoover] = useState("");
     const [rating, setRating] = useState(2.8);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage, setItemsPerPage] = useState(30); // Set the number of items to display per page
+    
+    const items = DummyItems;
+    // Calculate the index range for the current page
+    const indexOfLastItem = currentPage * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = items.slice(indexOfFirstItem, indexOfLastItem);
 
-    const items = [
-        { name: "Men's, Women's, and Kids' Clothing from Amazon Brands u", discount: 23, img: "src/assets/images/g-headsets.png" },
-        { name: "Intel 12th and 13th Gen Processors", discount: 43, img: "src/assets/images/g-mouse.png" },
-        { name: "Honey Can Do Home and Storage Solution Products", discount: 57, img: "src/assets/images/laptops.png" },
-        { name: "ASUS TUF Gaming VG279QM 27” HDR Monitor, 1080P Full HD (1920 x 1080),", discount: 12, img: "src/assets/images/jbl-speaker.png"},
-        { name: "iPhone 12” HDR Monitor, 1080P Full HD (1920 x 1080),", discount: 12, img: "src/assets/images/iphone-12.png"},
-        { name: "Men's, Women's, and Kids' Clothing from Amazon Brands", discount: 23, img: "src/assets/images/g-headsets.png" },
-        { name: "Intel 12th and 13th Gen Processors", discount: 43, img: "src/assets/images/g-mouse.png" },
-        { name: "Honey Can Do Home and Storage Solution Products", discount: 57, img: "src/assets/images/laptops.png" },
-        { name: "ASUS TUF Gaming VG279QM 27” HDR Monitor, 1080P Full HD (1920 x 1080),", discount: 12, img: "src/assets/images/jbl-speaker.png"},
-        { name: "iPhone 12” HDR Monitor, 1080P Full HD (1920 x 1080),", discount: 12, img: "src/assets/images/iphone-12.png"},
-
-        { name: "Intel 12th and 13th Gen Processors", discount: 43, img: "src/assets/images/g-mouse.png" },
-        { name: "Men's, Women's, and Kids' Clothing from Amazon Brands", discount: 23, img: "src/assets/images/g-headsets.png" },
-        { name: "iPhone 12” HDR Monitor, 1080P Full HD (1920 x 1080),", discount: 12, img: "src/assets/images/iphone-12.png"},
-        { name: "ASUS TUF Gaming VG279QM 27” HDR Monitor, 1080P Full HD (1920 x 1080),", discount: 12, img: "src/assets/images/jbl-speaker.png"},
-        { name: "Honey Can Do Home and Storage Solution Products", discount: 57, img: "src/assets/images/laptops.png" },
-        { name: "ASUS TUF Gaming VG279QM 27” HDR Monitor, 1080P Full HD (1920 x 1080),", discount: 12, img: "src/assets/images/jbl-speaker.png"},
-
-        { name: "Intel 12th and 13th Gen Processors g", discount: 43, img: "src/assets/images/g-mouse.png" },
-        { name: "Honey Can Do Home and Storage Solution Products", discount: 57, img: "src/assets/images/laptops.png" },
-        { name: "Men's, Women's, and Kids' Clothing from Amazon Brands", discount: 23, img: "src/assets/images/g-headsets.png" },
-        { name: "iPhone 12” HDR Monitor, 1080P Full HD (1920 x 1080),", discount: 12, img: "src/assets/images/iphone-12.png"},
-        { name: "Intel 12th and 13th Gen Processors", discount: 43, img: "src/assets/images/g-mouse.png" },
-
-        { name: "Men's, Women's, and Kids' Clothing from Amazon Brands", discount: 23, img: "src/assets/images/g-headsets.png" },
-        { name: "iPhone 12” HDR Monitor, 1080P Full HD (1920 x 1080),", discount: 12, img: "src/assets/images/iphone-12.png"},
-        { name: "ASUS TUF Gaming VG279QM 27” HDR Monitor, 1080P Full HD (1920 x 1080),", discount: 12, img: "src/assets/images/jbl-speaker.png"},
-        { name: "Honey Can Do Home and Storage Solution Products", discount: 57, img: "src/assets/images/laptops.png" },
-
-
-    ]
-
+    // Calculate total pages
+    const totalPages = items.length / itemsPerPage;
+    
     function trimSent(inputString, maxCharacters) {
-      
+        
         if (inputString.length > maxCharacters) {
           return inputString.slice(0, maxCharacters) + '...';
         }
@@ -76,8 +59,8 @@ const Listings = ( { type } ) => {
                 {/* Listing section */}
                 <div id="main-body"> 
                     
-                    { items.map((item, index) => (
-                    <div id="grid-item">
+                    { currentItems.map((item, index) => (
+                        <div id="grid-item" key={index} onClick={() => navigation('/details/:'+item.id)} >
                         {/* Images area */}
                         <div className="g-image">
                             <img src={item.img} alt={item.name +" Image"} width={"100%"} />
@@ -110,7 +93,22 @@ const Listings = ( { type } ) => {
                         </div>
                     </div>))}
 
+
                 </div>
+            </div>
+            {/* Pagination controls */}
+            <div style={{display: "flex", justifyContent: "center", alignItems: "center", padding: 20, gap: 16}}>
+                <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1} style={{cursor: "pointer"}}> Previous </button>
+                <span style={{color: 'black'}}>{currentPage} / {totalPages}</span>
+                <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentItems.length < itemsPerPage} style={{cursor: "pointer"}}> Next </button>
+            </div>
+
+            <div style={{width: '100%', height: '300px', overflow: 'hidden', backgroundImage: {src:'src/assets/images/ad1.jpg'}}}>
+                <img src={"src/assets/images/top-view-devices-supplies-composition.jpg"} alt="Cwift Ad" style={{width: '100%', objectFit: 'cover',}} />
+            </div>
+
+            <div>
+                <Recomended/>
             </div>
             <div>
                 <Footer/>
