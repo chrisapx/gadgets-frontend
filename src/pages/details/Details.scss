@@ -4,8 +4,11 @@
 
     .details-body {
 
+        padding-inline: 70px;
+        
+
         #item-dir {
-            color: grey;
+            color: rgb(104, 102, 102);
             font-size: 13px;
             padding-inline: 60px;
             padding-top: 30px;
@@ -18,8 +21,11 @@
             display: grid;
             grid-template-columns: 1.5fr 6fr 5fr 4fr;
             grid-gap: 1px;
-            background-color: rgb(233, 223, 223);
-            padding-inline: 50px;
+            // background-color: rgb(233, 223, 223);
+            // padding-inline: 50px;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(230, 223, 223);
             
             
             
@@ -53,8 +59,7 @@
                 
                 #main-img {
                     object-fit: cover;
-                    width: 100%;
-                    height: 100%;
+                   
                 }
             }
 
@@ -78,6 +83,77 @@
                 padding: 8px;
 
             }
+        }
+
+        .product-info-frame {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            color: black;
+            padding: 30px;
+            
+
+            #info-area {
+                
+                #product-info-header {
+                    color: black;
+                    background-color: white;
+                    font-weight: 700;
+                    font-size: 22px;
+                    padding-bottom: 20px;
+                    border-width: 1px;
+                    border-bottom-style: solid;
+                    border-bottom-color: rgb(204, 199, 199);
+                }
+
+                #info-table {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    border-block-end-style: solid;
+                    background-color: white;
+                    flex-direction: row;
+                    justify-content: space-evenly;
+                    border-width: 1px;
+                    border-bottom-style: solid;
+                    border-bottom-color: rgb(219, 219, 219);
+                    padding-inline: 8px;
+                    padding-block: 3px;
+                }
+
+            }
+
+
+        }
+
+        .important-info {
+            padding: 20px;
+            border-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(219, 219, 219);
+
+
+            #product-report {
+                display: flex;
+                flex-direction: row;
+                font-weight: normal;
+                padding: 10px;
+            }
+        }
+
+        .box-items-frame {
+            padding: 20px;
+            border-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(219, 219, 219);
+
+
+        }
+
+        .guide-doc-frame {
+            padding: 20px;
+            border-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(219, 219, 219);
+
         }
     }
 
