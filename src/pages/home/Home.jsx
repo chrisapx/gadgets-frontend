@@ -1,6 +1,6 @@
+import AdBar from "../../components/ad-section/AdBar";
 import Footer from "../../components/footer/Footer"
 import Signing from "../../components/footer/Signing";
-import Header from "../../components/header/Header"
 import BsKitchenElectronics from "../../components/home/best-sellers/BsKitchenElectronics";
 import DealUnder20k from "../../components/home/best-sellers/DealUnder20k";
 import Gaming from "../../components/home/categories/Gaming";
@@ -27,12 +27,12 @@ const Home = () => {
                 {/* Header */}
                 <NavBarMiddle/>
                 <NavBarLower/>
-                {/* <Header showAds={false}/> */}
             </div>
 
             {/* Body section */}
             <div id="home-frame" >
-                
+
+                <AdBar/>
                 {/* Categories */}
                 <div id="home-items">
                     <Gaming/>

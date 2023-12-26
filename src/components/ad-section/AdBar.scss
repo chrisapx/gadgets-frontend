@@ -1,5 +1,18 @@
 
+
 .adbar-frame {
-    background-color: rgb(255, 255, 255);
-    height: 400px;
+    // height: 200px;
+    width: 100%; /* Use 100% width to fill the container */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+
+    #adbar {
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        flex: 1;
+        background-color: rgb(255, 145, 0);
+        color: white; /* Set text color to white as an example */
+    }
 }

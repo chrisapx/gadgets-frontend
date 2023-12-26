@@ -64,7 +64,7 @@ const NavBarMiddle = () => {
                 <div id="nav-item"> 
                     {/* Cart */}
                     <LuShoppingCart size={30}/>
-                    <p id="cart" style={{backgroundColor: 'white', color: 'black', borderRadius: 30, justifyContent: 'center', paddingInline: 3, position: 'absolute', top: 50, right: 70, fontSize: 10}}>{cartItemCount}</p>
+                    <p id="cart" style={{backgroundColor: 'white', color: 'black', borderRadius: 30, justifyContent: 'center', paddingInline: 3, position: 'relative', top: -18, right: 20, fontSize: 10}}>{cartItemCount}</p>
                 </div>
             </div>
         </div>
