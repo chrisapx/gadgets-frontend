@@ -4,9 +4,11 @@ import './AdBar.scss'
 const AdBar = () => {
 
     return(
-        <div className="adbar-frame">
-            {/* <p id='contact-word'>Need help placing an order? </p> */}
-            {/* <p id='contact'>+256{orderContact}</p> */}
+        <div className='adbar-frame'>
+            <div id="adbar" style={{color: 'black'}}>
+                
+                ajajj ajjaj aj ajja ja jja ja
+            </div>
         </div>
     )
 }

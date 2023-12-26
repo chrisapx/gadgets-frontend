@@ -1,11 +1,13 @@
 import React, { useRef } from "react";
 import './NavBarLower.scss'
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 
 const NavBarLower = () => {
 
     const brandsRef = useRef(null);
+    const navigate = useNavigate();
 
     const scroll = (scrollOffset) => {
         if (brandsRef.current) {
@@ -14,9 +16,11 @@ const NavBarLower = () => {
     };
 
     const handleBrandClick = (brand) => {
-        alert("clicked " + brand)
-        // set the display page for the items to the brand items of the clicked brand
-    }
+        // if(brand === "all"){
+            navigate("la")
+            alert("clicked " + brand)
+        }
+
 
     return(
         <div className="brands-frame">

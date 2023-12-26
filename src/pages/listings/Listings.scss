@@ -1,0 +1,151 @@
+
+
+/* Shared styles for all screens */
+.listings-frame {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+//   font-size: 18px;
+
+    #body-frame {
+        display: grid;
+        grid-template-columns: 240px 1fr; /* Sidebar and main-body columns */
+        grid-gap: 1px;
+        background-color: rgb(235, 224, 224);
+
+        #side-bar {
+            width: 240px;
+            background-color: white;
+            color: black;
+        }
+
+        #main-body {
+            display: grid;
+            grid-gap: 1px;
+            justify-content: start;
+            justify-items: stretch;
+           
+                @media only screen and (max-width: 575.98px) {
+                  /* Styles for extra small screens */
+                  grid-template-columns: 1fr; /* Single column layout for mobile */
+                }
+              
+                @media only screen and (min-width: 576px) and (max-width: 767.98px) {
+                  /* Styles for small screens */
+                  grid-template-columns: repeat(2, 1fr); /* Two columns layout for tablets and large phones */
+                }
+              
+                @media only screen and (min-width: 768px) and (max-width: 991.98px) {
+                  /* Styles for medium screens */
+                  grid-template-columns: repeat(3, 1fr); /* Three columns layout for small laptops */
+                }
+              
+                @media only screen and (min-width: 992px) and (max-width: 1199.98px) {
+                  /* Styles for large screens */
+                  grid-template-columns: repeat(4, 1fr); /* Four columns layout for desktops and laptops */
+                }
+              
+                @media only screen and (min-width: 1200px) {
+                  /* Styles for extra large screens */
+                  grid-template-columns: repeat(5, 1fr); /* Five columns layout for large desktops */
+                }
+              
+
+
+            #grid-item {
+                background-color: white;
+                // height: 300px;
+                cursor: pointer;
+                color: black;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 16px;
+                align-items: center;
+
+
+                .g-image {
+                    // height: 200px;
+                    width: 150px;
+                    justify-content: center;
+                    align-items: center;
+                }
+                
+            }
+        }
+
+    }
+
+
+}
+
+
+
+/* Styles for small screens (up to 600px) */
+
+// @media only screen and (max-width: 600px) {
+    
+//     .listings-frame {
+// //   font-size: 18px;
+
+//         .body-frame {
+
+
+//             #side-bar {
+
+//             }
+
+//             #main-body {
+                
+//             }
+
+//         }
+
+
+//     }
+// }
+  
+//   /* Styles for medium screens (601px to 1024px) */
+//   @media only screen and (min-width: 601px) and (max-width: 1024px) {
+//     .listings-frame {
+//         //   font-size: 18px;
+        
+//                 .body-frame {
+        
+        
+//                     #side-bar {
+        
+//                     }
+        
+//                     #main-body {
+                        
+//                     }
+        
+//                 }
+        
+        
+//             }
+// }
+  
+//   /* Styles for large screens (1025px and above) */
+//   @media only screen and (min-width: 1025px) {
+//     .listings-frame {
+//         //   font-size: 18px;
+        
+//                 .body-frame {
+        
+        
+//                     #side-bar {
+        
+//                     }
+        
+//                     #main-body {
+                        
+//                     }
+        
+//                 }
+        
+        
+//             }
+//   }
+  

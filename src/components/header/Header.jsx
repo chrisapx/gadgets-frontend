@@ -4,13 +4,13 @@ import NavBarMiddle from "../navBar/NavBarMiddle";
 import NavBarTop from "../navBar/NavBarTop";
 
 
-const Header = () => {
+const Header = ( {showAds} ) => {
     return(
         <div>
             <NavBarTop/>
             <NavBarMiddle/>
             <NavBarLower/>
-            <AdBar/>
+            {/* <AdBar show={showAds}/> */}
         </div>
     )
 }
