@@ -13,14 +13,14 @@ function App() {
     <>
     <div id='app-frame'>
       {/* <Home/> */}
-      {/* <DetailsPage/> */}
-      <Routes>
+      <DetailsPage/>
+      {/* <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/details/:id" element={<DetailsPage />} />
         <Route path="/la" element={<Listings />} />
         <Route path="*" element={<NotFoundPage />} />
-      </Routes>
+      </Routes> */}
 
     </div>
     </>

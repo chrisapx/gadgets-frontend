@@ -60,7 +60,7 @@ const Listings = ( { type } ) => {
                 <div id="main-body"> 
                     
                     { currentItems.map((item, index) => (
-                        <div id="grid-item" key={index} onClick={() => navigation('/details/:'+item.id)} >
+                        <div id="grid-item" key={index} onClick={() => navigation('/details/'+item.id)} >
                         {/* Images area */}
                         <div className="g-image">
                             <img src={item.img} alt={item.name +" Image"} width={"100%"} />
@@ -103,7 +103,7 @@ const Listings = ( { type } ) => {
                 <button onClick={() => setCurrentPage(currentPage + 1)} disabled={currentItems.length < itemsPerPage} style={{cursor: "pointer"}}> Next </button>
             </div>
 
-            <div style={{width: '100%', height: '300px', overflow: 'hidden', backgroundImage: {src:'src/assets/images/ad1.jpg'}}}>
+            <div style={{width: '100%', height: '300px', overflow: 'hidden',}}>
                 <img src={"src/assets/images/top-view-devices-supplies-composition.jpg"} alt="Cwift Ad" style={{width: '100%', objectFit: 'cover',}} />
             </div>
 
