@@ -18,7 +18,7 @@ const NavBarMiddle = () => {
         <div className="nav-body">
             {/* Company logo */}
             <div id="logo" onClick={() => alert("Clicked the logo")}>
-                <img src="src/assets/logo.png" alt="Cwift logo" /> 
+                <img src="../src/assets/logo.png" alt="Cwift logo" /> 
             </div>
 
             <div id="menu-icon" onClick={() => alert("Clicked menu icon")}>

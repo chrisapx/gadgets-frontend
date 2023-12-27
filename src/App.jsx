@@ -1,6 +1,6 @@
 
 // import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Router, Routes } from 'react-router-dom'
 import DetailsPage from './pages/details/Details'
 import Home from './pages/home/Home'
 import About from './pages/about/About'
@@ -13,14 +13,14 @@ function App() {
     <>
     <div id='app-frame'>
       {/* <Home/> */}
-      <DetailsPage/>
-      {/* <Routes>
+      {/* <DetailsPage/> */}
+      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/details/:id" element={<DetailsPage />} />
         <Route path="/la" element={<Listings />} />
         <Route path="*" element={<NotFoundPage />} />
-      </Routes> */}
+      </Routes>
 
     </div>
     </>

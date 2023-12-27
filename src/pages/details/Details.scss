@@ -47,6 +47,7 @@
                     border-color: rgb(224, 221, 221);
                     justify-content: center;
                     align-items: center;
+                    cursor: pointer;
                 }
 
                 
@@ -149,6 +150,25 @@
         }
 
         .guide-doc-frame {
+            padding: 20px;
+            border-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(219, 219, 219);
+
+        }
+
+        .related-frame {
+            padding: 20px;
+            border-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgb(219, 219, 219);
+
+        }
+
+        .review-rate-frame {
+            display: grid;
+            grid-template-columns: 3fr 5fr 4fr;
+
             padding: 20px;
             border-width: 1px;
             border-bottom-style: solid;
