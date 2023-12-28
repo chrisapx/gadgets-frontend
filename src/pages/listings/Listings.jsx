@@ -47,10 +47,37 @@ const Listings = ( { type } ) => {
 
     const [isChecked, setIsChecked] = useState(false);
     const [checkedCategories, setCheckedCategories] = useState([]);
+    const [checked, setChecked] = useState("");
+  
+    // const handleCheck = ( category ) => {
+    //     if(checkedCategories.includes(category)){
+    //         setChecked(category);
+    //     };
+        
+    // }
 
     const handleChange = () => {
         setIsChecked(!isChecked);
+        // if(checkedCategories.includes( item )){
+        //     // checkedCategories.
+        // }
     };
+
+//     const [deps, setDepartments] = useState(initialDepartments);
+
+//   const handleChange = (id) => {
+//     const updatedDepartments = deps.map((dep) =>
+//       dep.id === id ? { ...dep, selected: !dep.selected } : dep
+//     );
+
+//     setDepartments(updatedDepartments);
+
+//     // Check if the checkbox is being unchecked, and remove the item
+//     const uncheckedDepartment = updatedDepartments.find((dep) => dep.id === id && !dep.selected);
+//     if (uncheckedDepartment) {
+//       setDepartments((prevDepartments) => prevDepartments.filter((dep) => dep.id !== id));
+//     }
+//   };
 
     const departments = [
                 { id: "1", name: "Baby Products", },

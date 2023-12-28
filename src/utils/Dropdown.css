@@ -1,0 +1,30 @@
+.dropdown-container {
+    position: relative;
+  }
+  
+  .trigger {
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    z-index: 1;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Create a pointer/triangle */
+  .dropdown:after {
+    content: '';
+    position: absolute;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent #f9f9f9 transparent;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  

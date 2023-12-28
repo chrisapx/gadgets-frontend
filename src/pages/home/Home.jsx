@@ -32,7 +32,7 @@ const Home = () => {
             {/* Body section */}
             <div id="home-frame" >
 
-                <AdBar/>
+                {/* <AdBar/> */}
                 {/* Categories */}
                 <div id="home-items">
                     <Gaming/>
